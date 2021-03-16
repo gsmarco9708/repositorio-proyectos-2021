@@ -1,10 +1,3 @@
-"""
-pip install SpeechRecognition
-Depencencias
-pyaudio (microfono)
-Idiomas soportados si se usa Google
-https://cloud.google.com/speech-to-text/docs/languages
-"""
 
 import speech_recognition as sr
 
@@ -17,10 +10,10 @@ mic = sr.Microphone()
 #sr.Microphone.list_microphone_names()
 
 with mic as source:
-    print('Ajustando ruido ambiental')
+    print('AJUSTANDO AMBIENTE')
     r.adjust_for_ambient_noise(source)
-    print('Grabando audio...')
+    print('GRABANDO AUDIO')
     audio = r.listen(source)
-    print('Audio grabado')
+    print('AUDIO GUARDADO')
 
-print("dijiste ? --> "+ r.recognize_google(audio, language='es-GT'))
+print("AUDIO A TEXTO:  "+ r.recognize_google(audio, language='es-GT'))
